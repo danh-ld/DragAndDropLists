@@ -24,7 +24,9 @@ class _DragAndDropItemWrapper extends State<DragAndDropItemWrapper>
   @override
   void setState(fn) {
     if(mounted) {
-      super.setState(fn);
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        super.setState(fn);
+      });
     }
   }
 
