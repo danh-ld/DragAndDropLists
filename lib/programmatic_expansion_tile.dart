@@ -142,6 +142,15 @@ class ProgrammaticExpansionTileState extends State<ProgrammaticExpansionTile>
       }
     });
   }
+  
+  @override
+  void setState(fn) {
+    if (mounted) {
+      Future.delayed(Duration.zero, () {
+        super.setState(fn);
+      });
+    }
+  }
 
   @override
   void dispose() {
