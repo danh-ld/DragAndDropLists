@@ -21,6 +21,12 @@ class _DragAndDropItemWrapper extends State<DragAndDropItemWrapper>
   bool _dragging = false;
   Size _containerSize = Size.zero;
   Size _dragHandleSize = Size.zero;
+  @override
+  void setState(fn) {
+    if(mounted) {
+      super.setState(fn);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
