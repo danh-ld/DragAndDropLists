@@ -28,6 +28,13 @@ class _DragAndDropListWrapper extends State<DragAndDropListWrapper>
   void initState() {
     super.initState();
   }
+  
+  @override
+  void setState(fn) {
+    if(mounted) {
+      super.setState(fn);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
