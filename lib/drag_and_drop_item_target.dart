@@ -28,7 +28,7 @@ class _DragAndDropItemTarget extends State<DragAndDropItemTarget>
   @override
   void setState(fn) {
     if (mounted) {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
+      Future.delayed(Duration.zero, () {
         super.setState(fn);
       });
     }
