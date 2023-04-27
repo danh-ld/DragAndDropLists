@@ -29,6 +29,15 @@ class DragAndDropListTarget extends StatefulWidget {
 class _DragAndDropListTarget extends State<DragAndDropListTarget>
     with TickerProviderStateMixin {
   DragAndDropListInterface? _hoveredDraggable;
+  
+  @override
+  void setState(fn) {
+    if (mounted) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        super.setState(fn);
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
